@@ -54,16 +54,24 @@ body {
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 1.3rem;
   margin-bottom: 20px;
-  color: #0d47a1;
+  color: rgb(137, 137, 137);
+  font-weight: bold;
 }
 
-.movie-grid {
+/* .movie-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
+} */
+
+.movie-grid{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .movie-card {
@@ -74,7 +82,14 @@ body {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
 }
+
+.movie-card:hover{
+  transform: scale(1.05);
+}
+
 
 .movie-poster {
   width: 100%;
@@ -89,4 +104,18 @@ body {
   font-weight: bold;
   color: #0d47a1;
   text-align: center;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .header  {
+    flex-direction: column;
+    gap:10px;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+  }
+  .movie-card:hover{
+  transform: none
+  }
 }

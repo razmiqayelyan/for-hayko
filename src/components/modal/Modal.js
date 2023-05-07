@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { close } from '../../features/modal/modalReducer';
 import './Modal.css';
 import { Convertminutes } from '../../logic/ConvertHour';
+import { getMovieData } from '../../features/movie/moveSlice';
 
 const Modal = () => {
     const dispatch = useDispatch()
-    const data = useSelector((state) => state.movie.data)
-    const isLoading = useSelector((state) => state.movie.isLoading)
-    const error = useSelector((state) => state.movie.error)
+    const {data, isLoading, error} = useSelector(getMovieData)
+
 
     if (isLoading) {
         return (
